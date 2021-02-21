@@ -1,0 +1,22 @@
+<h2 align="center">DATA</h2>
+<div class="container">
+    <!-- <h4 id="heading"></h4> -->
+    <br>
+    <!-- <div class="col-6"> -->
+    <table width="400px" border="1">
+        <tr>
+
+            <th>USERNAME</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+
+        </tr>
+        <tr *ngFor="let d of datas">
+            <td>{{d.username}}</td>
+            <td>{{d.firstname}}&nbsp;{{d.lastname}}</td>
+            <td>{{d.email}}</td>
+        </tr>
+        
+
+    </table>
+</div>
