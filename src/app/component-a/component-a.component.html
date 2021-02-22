@@ -1,63 +1,63 @@
 <h2 align="center">
   FORM</h2>
 <!-- <h4 id="heading"></h4> -->
-<form [formGroup]="componenta" class="example-form" (ngSubmit)="onSubmit()" >
-  
-  <mat-form-field class="example-full-width">
+<form [formGroup]="componenta" class="example-form" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>UserName</mat-label>
     <input matInput placeholder="" value="" formControlName="username" required>
 
   </mat-form-field>
-  <div *ngIf=" componenta.get('username').touched && componenta.get('username').errors">
+  <mat-error id="err" *ngIf=" componenta.get('username').touched && componenta.get('username').errors">
     <div id="err" *ngIf="componenta.get('username').errors.required">
       Value Required
     </div>
-    <div *ngIf="componenta.get('username').errors.pattern">
+    <div id="err" *ngIf="componenta.get('username').errors.pattern">
       Username must include only lowercase alphabets and numbers.
     </div>
-    <div *ngIf="componenta.get('username').errors.minlength">
+    <div id="err" *ngIf="componenta.get('username').errors.minlength">
       Username must be at least 8 characters long
     </div>
-  </div>
+  </mat-error>
   <br>
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>FirstName</mat-label>
     <input matInput placeholder="" value="" formControlName="firstname" required>
   </mat-form-field>
-  <div *ngIf="componenta.get('firstname').touched && componenta.get('firstname').errors">
+  <mat-error id="err" *ngIf="componenta.get('firstname').touched && componenta.get('firstname').errors">
     <div id="err" *ngIf="componenta.get('firstname').errors.required">
       Value Required
     </div>
-  </div>
+  </mat-error>
   <br>
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>LastName</mat-label>
     <input matInput placeholder="" value="" formControlName="lastname" required>
   </mat-form-field>
-  <div *ngIf=" componenta.get('lastname').touched && componenta.get('lastname').errors">
+  <mat-error id="err" *ngIf=" componenta.get('lastname').touched && componenta.get('lastname').errors">
     <div id="err" *ngIf="componenta.get('lastname').errors.required">
       Value Required
     </div>
-  </div>
+  </mat-error>
   <br>
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Email</mat-label>
     <input matInput placeholder="" value="" formControlName="email" required>
   </mat-form-field>
-  <div *ngIf="  componenta.get('email').touched && componenta.get('email').errors">
+  <mat-error id="err" *ngIf="  componenta.get('email').touched && componenta.get('email').errors">
     <div id="err" *ngIf="componenta.get('email').errors.required">
       Value Required
     </div>
-    <div *ngIf="componenta.get('email').errors.email">
+    <div id="err" *ngIf="componenta.get('email').errors.email">
       should be in Email format
     </div>
-  </div>
+  </mat-error>
   <br>
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Phone No:</mat-label>
     <input matInput placeholder="" value="" formControlName="phoneno" required>
   </mat-form-field>
-  <div *ngIf="componenta.get('phoneno').touched &&  componenta.get('phoneno').errors">
+  <mat-error id="err" *ngIf="componenta.get('phoneno').touched &&  componenta.get('phoneno').errors">
     <div id="err" *ngIf="componenta.get('phoneno').errors.required">
       Value Required
     </div>
@@ -68,9 +68,9 @@
       Phone Number should be only 10 digit integer
     </div>
 
-  </div>
+  </mat-error>
   <br>
 
-  <button mat-button color="accent"  [disabled]="!componenta.valid">Submit</button>
+  <button mat-button color="accent" [disabled]="!componenta.valid">Submit</button>
 
 </form>
